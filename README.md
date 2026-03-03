@@ -2,81 +2,79 @@
 ![JavaFX](https://img.shields.io/badge/JavaFX-21-orange)
 ![Build](https://img.shields.io/badge/build-Maven-blue)
 [![CI](https://github.com/maxim618/AudioPlayer/actions/workflows/ci.yml/badge.svg)](https://github.com/maxim618/AudioPlayer/actions/workflows/ci.yml)
+![Version](https://img.shields.io/badge/version-1.0.0-brightgreen)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-# PLAYMY - JavaFX Audio Player
+# PLAYMY — JavaFX Audio Player
 
-Простой аудиоплеер на **JavaFX**.  
-Поддерживает воспроизведение треков и управление плейлистом.
+Desktop аудиоплеер, реализованный на **Java 17 + JavaFX 21**  
+Проект демонстрирует чистую архитектуру, разделение слоёв и production-сборку через `jlink + jpackage`.
 
-##  Возможности
-- Воспроизведение аудиофайлов (**MP3, WAV**)
-- Управление воспроизведением: **Play / Pause / Stop**
-- Перемотка и выбор треков
+---
+
+##  Release
+
+**Current version:** `1.0.0`
+
+Скачать portable Windows build:
+👉 https://github.com/maxim618/AudioPlayer/releases
+
+### Distribution includes:
+- Native Windows launcher
+- Custom Java runtime (jlink)
+- App-image packaging (jpackage)
+- Versioned artifact: `PlayMy-1.0.0-windows.zip`
+
+---
+
+##  Features
+
+- Воспроизведение **MP3 / WAV**
+- Play / Pause / Stop
+- Перемотка
 - Регулировка громкости
-- Отображение информации о треке (название, артист, альбом)
-- Поддержка обложек (если есть в файле)
+- Управление плейлистом
+- Отображение метаданных (название, артист, альбом)
+- Поддержка обложек (если присутствуют в файле)
 
-### Tech Stack
+---
 
-- Java 17
-- JavaFX 21 (used with Java 17 runtime)
-- Maven
 ## Architecture
 
-Проект построен по принципу разделения ответственности между слоями UI, логики и данных.
+Проект построен по принципу разделения ответственности между слоями.
 
-### Основные компоненты
+### UI Layer (JavaFX)
+- FXML + контроллеры
+- Только взаимодействие с пользователем
+- Без бизнес-логики
 
-- **UI layer (JavaFX)**
-    - Отвечает за отображение интерфейса и обработку пользовательских действий
-    - Использует FXML и контроллеры
-    - Не содержит бизнес-логики воспроизведения
+### Player Logic
+- Инкапсуляция `Media` и `MediaPlayer`
+- Управление состоянием воспроизведения
+- Обработка смены треков
 
-- **Player logic**
-    - Инкапсулирует работу с `Media` и `MediaPlayer`
-    - Управляет состоянием воспроизведения (play / pause / stop)
-    - Обрабатывает смену треков и перемотку
+### Playlist Management
+- Управление списком треков
+- Навигация
+- Хранение текущего состояния
 
-- **Playlist management**
-    - Управление списком треков
-    - Навигация по плейлисту
-    - Хранение информации о текущем треке
+### Metadata Handling
+- Чтение метаданных аудиофайлов
+- Работа с embedded обложками
 
-- **Metadata handling**
-    - Чтение метаданных аудиофайлов (название, артист, альбом)
-    - Работа с обложками, если они присутствуют в файле
+---
 
-### Architectural decisions
+##  Tech Stack
 
-- JavaFX используется как UI-фреймворк из-за нативной поддержки мультимедиа
-- JavaFX 21 подключён как внешние модули и используется с Java 17 runtime
-- Логика плеера отделена от UI для упрощения тестирования и расширения функциональности
-- Maven применяется как инструмент сборки и управления зависимостями
+- Java 17
+- JavaFX 21 (external modules)
+- Maven
+- jlink (custom runtime)
+- jpackage (native packaging)
+- GitHub Actions (CI)
 
+---
 
-### Сборка и запуск
+## License
 
-```bash
-mvn clean javafx:run
-```
-### Платформы
-
-- **Windows**
-```bash
-  mvn clean javafx:run -Djavafx.platform=win
-```
-- **Linux**
-```bash
-  mvn clean javafx:run -Djavafx.platform=linux
-```
-
-- **macOS**
-```bash
-  mvn clean javafx:run -Djavafx.platform=mac
-```
-
-###  Лицензия
-
-- Проект распространяется под лицензией MIT
-
+- MIT License
