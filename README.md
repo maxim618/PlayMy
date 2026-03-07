@@ -1,7 +1,7 @@
 ![Java](https://img.shields.io/badge/Java-17-orange)
 ![JavaFX](https://img.shields.io/badge/JavaFX-21-orange)
 ![Build](https://img.shields.io/badge/build-Maven-blue)
-[![CI](https://github.com/maxim618/PlayMy/actions/workflows/ci.yml/badge.svg)](https://github.com/maxim618/PlayMy/actions/workflows/ci.yml)
+[![CI](https://github.com/maxim618/playmy/actions/workflows/ci.yml/badge.svg)](https://github.com/maxim618/playmy/actions/workflows/ci.yml)
 ![Version](https://img.shields.io/badge/version-1.0.0-brightgreen)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
@@ -21,7 +21,7 @@ Desktop аудиоплеер, реализованный на **Java 17 + JavaFX
 **Current version:** `1.0.0`
 
 Скачать portable Windows build:
- https://github.com/maxim618/PlayMy/releases
+ https://github.com/maxim618/playmy/releases
 
 ### Distribution includes:
 - Native Windows launcher
