@@ -5,9 +5,26 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.playmy</groupId>
-    <artifactId>audioplayer</artifactId>
+    <artifactId>playmy</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
+    <name>PlayMy</name>
+    <description>Cross-platform JavaFX audio player</description>
+    <url>https://github.com/maxim618/playmy</url>
+    <organization>
+        <name>PlayMy Audio</name>
+    </organization>
+    <developers>
+        <developer>
+            <name>Maksim B.</name>
+            <url>https://github.com/maxim618</url>
+        </developer>
+    </developers>
+    <scm>
+        <connection>scm:git:https://github.com/maxim618/playmy.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/maxim618/playmy.git</developerConnection>
+        <url>https://github.com/maxim618/playmy</url>
+    </scm>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -17,11 +34,9 @@
         <javafx.version>21</javafx.version>
         <ikonli.version>12.3.1</ikonli.version>
         <main.class>com.playmy.MainApp</main.class>
-        <app.name>PlayMy</app.name>
-        <app.vendor>
-            Maksim B.
-            PlayMy Audio
-        </app.vendor>
+
+        <app.name>playmy</app.name>
+        <app.vendor>Maksim B. / PlayMy Audio</app.vendor>
     </properties>
 
     <!--  DEPENDENCIES  -->
